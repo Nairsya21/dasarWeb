@@ -1,0 +1,36 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #add;
+    line-height: 1.65;
+    padding-bottom: 1000px;
+}
+.container-satu {
+    width: 1000px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.container-satu .sidebar-satu {
+    width: 150px;
+    text-alig n: left;
+    
+}
+
+.container-satu .kolom-utama {
+    flex: 1; 
+    margin-left: 10px;
+    text-align: left; 
+}
+
+.container-satu .sidebar-dua {
+    width: 200px;
+    text-align: left;
+}

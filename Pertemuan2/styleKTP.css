@@ -1,0 +1,76 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.ktp{
+    position: relative;
+    width: 500px;
+    height: 300px;
+    margin: 60px auto;
+    background-color: #add8e6;
+    border-radius: 10px;
+}
+.header{
+    text-align: center;
+    color: black;
+    letter-spacing: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.header h5{
+    margin: 1px 0;
+}
+.header img{
+    width: 30px;
+    height: 30px;
+}
+.info{
+    display: flex;
+    line-height: 0;
+}
+.personal-info, .address-info{
+    flex: 1;
+    margin: 20px;
+    font-size: 12px;
+}
+.personal-info p {
+    margin-bottom: 0px;
+    text-align: left;
+    font-size: 12px;
+}
+.personal-info p.indent{
+    margin-left: 20px;
+}
+.indent1{
+    margin-right: 20px;
+    margin-left: 380px;
+    text-align: center;
+}
+.personal-info h3 , .address-info h3{
+    font-size: medium;
+    color: black;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+.photo{
+    width: 100px;
+    height: 125px;
+    border-radius: 2px;
+    float: right;
+}
+.photo2{
+    width: 50px;
+    height: 40px;
+    border-radius: 2px;
+    float: right;
+    margin-top: 10px;
+    margin-right: 25px;
+}
+.footer{
+    display: flex;
+    color: black;
+    margin-left: 400px;
+    font-size: 10px;
+    margin-top: 0px;
+}
