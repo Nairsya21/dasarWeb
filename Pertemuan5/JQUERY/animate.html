@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Buatlah file HTML baru di dalam direktori dasarWeb/praktik_jquery, kemudian ketik kode program berikut ini: (soal no 9-->)
+    <!-- Memuat file CSS untuk gaya animasi -->
+    <link rel="stylesheet" type="text/css" href="styleAnimate.css"/>
+
+    <!-- Memuat library jQuery -->
+    <script src="jquery-3.7.1.js"></script>
+
+    <!-- Script jQuery untuk mengatur animasi -->
+    <script>
+        $(document).ready(function() {
+            // Ketika tombol diklik
+            $("button").click(function() {
+                // Animate div ke posisi left: 300
+                $("div").animate({left: 300});
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Tombol untuk memulai animasi -->
+    <button type="button">Start Animation</button>
+
+    <!-- Kotak yang akan dianimasikan -->
+    <div class="box"></div>
+</body>
+</html>
