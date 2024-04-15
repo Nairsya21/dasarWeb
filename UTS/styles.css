@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  position: relative;
+  height: 400px;
+  background-image: url(header.png);
+  background-size: cover;
+  text-align: center;
+  color: white;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+button#daftar {
+  display: block;
+  margin: 20px auto; /* Menengahkan tombol di footer */
+  padding: 10px 20px;
+  background-color: #ff9900;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+section {
+  padding: 20px;
+  justify-content: space-around;
+}
+
+.level,
+.package {
+  margin-bottom: 20px;
+}
+
+.package img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+button:hover {
+  background-color: #e68a00;
+}
+
+#level-training h2,
+#paket-kursus h2 {
+  font-size: 55px;
+  margin: 45px 45px; 
+}
+
+/* Ubah warna font deskripsi */
+.level p,
+.package p {
+  color: grey;
+  font-size: 24px;
+}
+
+.level,
+.package {
+  margin: 45px 45px; 
+}
+
+#daftar {
+  display: block;
+  background-color: #ff9900;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+#paket-kursus h2 {
+  text-align: center; /* Center the title */
+  margin-bottom: 20px; /* Add some space below the title */
+}
+.package-container {
+  display: flex;
+}

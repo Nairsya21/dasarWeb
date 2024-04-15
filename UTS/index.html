@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kursus Mengemudi JTI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="overlay"></div>
+    <h1>Kursus Mengemudi JTI</h1>
+  </header>
+  
+  <section id="level-training">
+    <h2>Level Training</h2>
+    <div class="level">
+      <h3>Beginner</h3>
+      <p>Di level dasar ini, anda akan diajarkan bagaimana dasar-dasar dalam mengemudikan kendaraan bertransmisi manual, automatic atau keduanya dengan baik, benar, dan aman, serta anda akan diajarkan tentang pengetahuan mengenai peraturan lalu lintas. Dalam level Beginner Anda akan belajar selama 9 sesi yang per sesinya 90 menit. </p>
+    </div>
+    <div class="level">
+      <h3>Intermediate</h3>
+      <p>Jika Anda merasa telah memahami dasar dalam mengemudikan kendaraan, namun belum menguasai berbagai medan dan kondisi lalu lintas yang menantang dan sulit, Anda dapat mencoba program ini agar dapat mengembangkan skill mengemudi Anda. Dalam level Intermediate Anda akan belajar selama 6 sesi yang per sesinya 90 menit.</p>
+    </div>
+    <div class="level">
+      <h3>Expedite</h3>
+      <p>Program ini khusus untuk Anda yang ingin melancarkan, mengingat kembali atau memperdalam kompetensi mengemudi yang telah dimiliki sebelumnya, baik untuk transmisi manual maupun otomatis. Dalam level Expedite Anda akan belajar selama 4 sesi yang per sesinya 90 menit.</p>
+    </div>
+  </section>
+
+  <section id="paket-kursus">
+    <h2>Paket Kursus</h2>
+    <div class="package">
+      <img src="manual.jpeg" alt="Manual">
+      <p>Manual</p>
+    </div>
+    <div class="package">
+      <img src="automatic.jpeg" alt="Automatic">
+      <p>Automatic</p>
+    </div>
+    <div class="package">
+      <img src="both.jpg" alt="Combination">
+      <p>Combination</p>
+    </div>
+  </section>
+  <footer>
+    <button id="daftar">Daftar Sekarang</button>
+  </footer>
+
+  <script src="jquery-3.7.1.js"></script>
+  <script src="jquery-ui-1.13.2/jquery-ui.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#daftar').click(function() {
+        window.location.href = "registration.php";
+      });
+    });
+  
+  </script>  
+</body>
+</html>
