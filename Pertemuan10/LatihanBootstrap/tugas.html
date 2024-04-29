@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pengenalan Bootstrap</title>
+    <!-- Menyisipkan Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Custom CSS */
+        .navbar {
+            border-radius: 0;
+        }
+
+        .navbar-nav .nav-link {
+            color: #333;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #007bff;
+        }
+
+        .jumbotron {
+            background: linear-gradient(to right, #aed6f1, #dfe6e9);
+            color: #333;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md bg-light navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pengenalan Bootstrap</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Belajar Bootstrap</h1>
+            <p class="lead">Bootstrap adalah framework untuk membuat responsif website menggunakan HTML, CSS, dan JS.</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Tentang Kami</h2>
+                <p>The Eiffel Tower (French: Tour Eiffel) is a wrought-iron lattice tower located on the Champ de Mars in Paris, France. It was designed and built by engineer Gustave Eiffel company from 1887 to 1889. </p>
+            </div>
+            <div class="col-md-6">
+                <img src="tower.jpg" class="img-fluid" alt="Gambar Thumbnail">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Mata Kuliah Desain dan Pemrograman Web</p>
+            <p>Nairsya Syauqi Ghasila - 2241760076</p>
+        </div>
+    </footer>
+
+    <!-- Menyisipkan Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
