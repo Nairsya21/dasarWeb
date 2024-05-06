@@ -1,0 +1,141 @@
+<!--Praktikum 5. Folder Module – Bagian Anggota-->
+
+<div class="container-fluid">
+    <div class="row">
+        <?php require 'admin/template/menu.php'; ?>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-nd-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Anggota</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@ndo">
+                        <i class="fa fa-plus"></i> Tambah Anggota
+                    </button>
+                </div>
+            </div>
+            <?php
+            // Menampilkan pesan flash jika ada
+            if (isset($_SESSION['_flashdata'])){
+                echo "<br>";
+                foreach ($_SESSION['_flashdata'] as $key => $val) {
+                    echo get_flashdata($key);
+                }
+            ?>
+                <div class="table-responsive small">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">Jabatan</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $no = 1;
+                            $query = "SELECT FROM anggota a, jabatan j, user u WHERE a.jabatan_id = j.id AND a.user_id = u.id order by a.id desc";
+                            $result = mysqli_query($koneksi, $query);
+                            $no = 1;
+                            while ($row = mysqli_fetch_assoc($result)) {
+                            ?>
+                            <tr>
+                                <th scope="row"><?= $no++; ?></th>
+                                <td><?= $row['nama']; ?></td>
+                                <td><?= $row['jabatan']; ?></td>
+                                <td><?= $row['username']; ?></td>
+                                <td>
+                                    <a href="index.php?page=anggota/edit&id=<?php echo $row['user_id']; ?>" class="btn btn-warning btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+                                    <a href="fungsi/hapus.php?anggota hapus&id=<?php echo $row['user_id']; ?>" onclick="javascript:return confirm('Hapus Data Jabatan ?');" class="btn btn-danger btn-xs"><i class="fa fa-trash-o" aria-hidden="true"></i> Hapus </a>
+                                </td>
+                            </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            <?php } ?>
+            <!-- Modal Tambah Anggota -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title fs-5" id="exampleModalLabel">Form Anggota</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form action="fungsi/tambah.php?anggota=tambah" method="POST">
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label">Nama: </label>
+                                    <input type="text" name="nama" class="form-control" id="recipient-name">
+                                </div>
+                                <!-- Select Jabatan -->
+                                <div class="mb-3">
+                                    <label for="jabatan" class="col-form-label">Jabatan:</label>
+                                    <select class="form-select" name="jabatan" aria-label="Default select example">
+                                        <option selected>Pilih Jabatan</option>
+                                        <?php
+                                        $query2 = "SELECT * FROM jabatan ORDER BY jabatan ASC";
+                                        $result2 = mysqli_query($koneksi, $query2);
+                                        while ($row2 = mysqli_fetch_assoc($result2)) {
+                                        ?>
+                                        <option value="<?= $row2['id']; ?>"><?= $row2['jabatan']; ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                                <!-- Radio Button Jenis Kelamin -->
+                                <div class="mb-3">
+                                    <label for="jenis_kelamin" class="col-form-label">Jenis Kelamin:</label>
+                                    <br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="jenis_kelamin" id="inlineRadio1" value="L" checked>
+                                        <label class="form-check-label" for="inlineRadio1">Laki-Laki</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="jenis_kelamin" id="inlineRadio2" value="P">
+                                        <label class="form-check-label" for="inlineRadio2">Perempuan</label>
+                                    </div>
+                                </div>
+                                <!-- Textarea Alamat -->
+                                <div class="mb-3">
+                                    <label for="alamat" class="col-form-label">Alamat:</label>
+                                    <textarea class="form-control" name="alamat" id="alamat" rows="3"></textarea>
+                                </div>
+                                <!-- Input No Telepon -->
+                                <div class="mb-3">
+                                    <label for="no_telp" class="col-form-label">No Telepon:</label>
+                                    <input type="tel" name="no_telp" class="form-control" id="no_telp">
+                                </div>
+                                <hr class="border border-primary border-3 opacity-75">
+                                <!-- Input Username -->
+                                <div class="mb-3">
+                                    <label for="username" class="col-form-label">Username:</label>
+                                    <input type="text" name="username" class="form-control" id="username">
+                                </div>
+                                <!-- Input Password -->
+                                <div class="mb-3">
+                                    <label for="password" class="col-form-label">Password:</label>
+                                    <input type="password" name="password" class="form-control" id="password">
+                                </div>
+                                <!-- Select Level -->
+                                <div class="mb-3">
+                                    <label for="level" class="col-form-label">Level:</label>
+                                    <select class="form-select" name="level" aria-label="Default select example" id="level">
+                                        <option selected disabled>Pilih Level</option>
+                                        <option value="user">User</option>
+                                        <option value="admin">Admin</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i> Close</button>
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> Simpan</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
